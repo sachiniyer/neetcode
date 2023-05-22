@@ -28,7 +28,6 @@ impl Solution {
         for i in 0..9 {
             let mut m1: HashMap<char, bool> = HashMap::new();
             let mut m2: HashMap<char, bool> = HashMap::new();
-
             for j in 0..9 {
                 if board[i][j] != '.' && m1.contains_key(&board[i][j]) {
                     return false;
