@@ -1,3 +1,3 @@
-# Neatcode solutions
+# Neetcode solutions
 
 https://github.com/clearloop/leetcode-cli is great.
