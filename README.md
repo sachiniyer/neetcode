@@ -6,3 +6,4 @@ https://github.com/clearloop/leetcode-cli is great.
 There are a few problems that don't support rust
  * 138
  * 141
+ * 133
