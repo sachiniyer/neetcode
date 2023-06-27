@@ -3,7 +3,7 @@ use std::collections::HashSet;
 use std::collections::VecDeque;
 
 impl Solution {
-    pub fn can_finish(num_courses: i32, prerequisites: Vec<Vec<i32>>) -> bool {
+    pub fn find_order(num_courses: i32, prerequisites: Vec<Vec<i32>>) -> Vec<i32> {
         let mut graph: HashMap<i32, HashSet<i32>> = HashMap::new();
         let mut indegree: HashMap<i32, i32> = HashMap::new();
         for i in 0..num_courses {
@@ -21,8 +21,10 @@ impl Solution {
             }
         }
         let mut count = 0;
+        let mut res: Vec<i32> = Vec::new();
         while queue.len() > 0 {
             let node = queue.pop_front().unwrap();
+            res.push(node);
             count += 1;
             for n in graph.get(&node).unwrap() {
                 indegree.insert(*n, indegree.get(n).unwrap() - 1);
@@ -31,6 +33,9 @@ impl Solution {
                 }
             }
         }
-        count == num_courses
+        if count == num_courses {
+            return res;
+        }
+        vec![]
     }
 }
